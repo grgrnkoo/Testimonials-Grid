@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: hsl(210, 46%, 95%);
+    font-size: clamp(10px, 13px, 16px);
+    overflow: hidden;
+}
+
+svg {
+    position: absolute;
+    z-index: 0;
+    inset: 0 0 0 50%;
+}
+
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.gridbox {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    grid-template: repeat(auto-fit, minmax(200px, 2fr))/ repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.g1 {
+    position: relative;
+    background-color: hsl(263, 55%, 52%);
+    color: hsl(0, 0%, 100%);
+}
+
+.g2 {
+    background-color: hsl(217, 19%, 35%);
+    color: hsl(0, 0%, 100%);
+}
+
+.g3 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
+}
+
+.g4 {
+    background-color: hsl(219, 29%, 14%);
+    color: hsl(0, 0%, 100%);
+}
+
+.g5 {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
+}
+
+@media only screen and (min-width: 1100px) {
+    .gridbox {
+        grid-template: repeat(2, auto) / repeat(4, 1fr);
+    }
+
+    .g1 {
+        grid-column: span 2;
+    }
+    
+    .g4 {
+        grid-column: span 2;
+    }
+    
+    .g5 {
+        grid-area: 1 / 4 / span 2 / 4;
+    }
+}
+
+@media only screen and (min-width: 666px) {
+    .container {
+        width: 80%;
+    }
+
+    .g1 {
+        grid-column: span 2; 
+    }
+}
+
+.person {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.name p {
+    opacity: .9;
+}
+
+.name .title {
+    opacity: .6;
+    font-size: .7rem;
+}
+
+.person img {
+    width: 28px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid hsl(0, 100%, 100%);
+    margin-right: 1rem ;
+}
+
+p {
+    opacity: .6;
+}
+
+h2 {
+    opacity: .9;
+    margin: 1rem 0;
+}
+
+.grid {
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 40px 40px 50px hsla(219, 29%, 14%, 10%);
+}
